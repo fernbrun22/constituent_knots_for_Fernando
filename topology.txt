@@ -1,0 +1,37 @@
+1aukA
+Whole chain: {'0_1': 0.715, '3_1': 0.15}
+Internal loop 12-263: 0_1
+Shorter loop 12-263: {'0_1': 0.945}
+Internal loop 12-264: 0_1
+Shorter loop 12-264: {'0_1': 0.945}
+Internal loop 263-264: 0_1
+Shorter loop 263-264: {'0_1': 0.74, '3_1': 0.12}
+=====================
+1ei6A
+Whole chain: {'0_1': 0.805}
+Internal loop 24-63: 0_1
+Shorter loop 24-63: {'0_1': 0.8, '3_1': 0.12}
+Internal loop 24-239: 0_1
+Shorter loop 24-239: {'0_1': 0.935}
+Internal loop 24-240: 0_1
+Shorter loop 24-240: {'0_1': 0.945}
+Internal loop 24-241: 0_1
+Shorter loop 24-241: {'0_1': 0.905}
+Internal loop 63-239: 0_1
+Shorter loop 63-239: {'0_1': 0.93}
+Internal loop 63-240: 0_1
+Shorter loop 63-240: {'0_1': 0.915}
+Internal loop 63-241: 0_1
+Shorter loop 63-241: {'0_1': 0.905}
+Internal loop 239-240: 0_1
+Shorter loop 239-240: {'0_1': 0.72, '3_1': 0.145}
+Internal loop 239-241: 0_1
+Shorter loop 239-241: {'0_1': 0.76, '3_1': 0.1}
+Internal loop 240-241: 0_1
+Shorter loop 240-241: {'0_1': 0.805}
+=====================
+1ei6A
+Whole chain: {'0_1': 0.765, '3_1': 0.105}
+Internal loop 201-205: 0_1
+Shorter loop 201-205: {'0_1': 0.745, '3_1': 0.125}
+Internal loop 201-367: 0_1
