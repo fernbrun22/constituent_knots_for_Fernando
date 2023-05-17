@@ -1,4 +1,5 @@
 from topoly import alexander
+import numpy as np
 
 class Protein():
     def __init__(self, filename, ndxes):
@@ -38,13 +39,14 @@ class Protein():
         constituent_knots['default'] = t0
         for bridge in self.bridges:
             print('\rPDB:{}, bridge:{:d}-{:d}'.format(self.name,bridge[0],bridge[1]),end='')
-            t_in = self.topol_internal_loop(bridge)
+            t_in, dist = self.topol_internal_loop(bridge)
             with open('topology.txt', 'a+') as f:
-                f.write('Internal loop {:d}-{:d}: {}\n'.format(bridge[0], bridge[1], t_in))
+                f.write('Bridge {:d}-{:d} dist: {:.2f}A\n'.format(bridge[0], bridge[1], dist))
+                f.write('  Internal loop {:d}-{:d}: {}\n'.format(bridge[0], bridge[1], t_in))
             constituent_knots['in_{:d}-{:d}'.format(bridge[0],bridge[1])] = t_in
             t_sh = self.topol_shorter_loop(bridge)
             with open('topology.txt', 'a+') as f:
-                f.write('Shorter loop {:d}-{:d}: {}\n'.format(bridge[0], bridge[1], t_sh))
+                f.write('  Shorter loop {:d}-{:d}: {}\n'.format(bridge[0], bridge[1], t_sh))
             constituent_knots['sh_{:d}-{:d}'.format(bridge[0],bridge[1])] = t_sh
         with open('topology.txt', 'a+') as f:
             f.write('=====================\n')
@@ -60,7 +62,10 @@ class Protein():
         coords = [self.coords[i] for i in range(bridge[0],bridge[1]+1)]
         with open('loop_xyzs/{}_in_{:d}-{:d}.xyz'.format(self.name,bridge[0],bridge[1]), 'w') as f:
             f.write(self.format_coords(coords))
-        return alexander(coords, max_cross=60, closure=0)
+        ndx1, x1, y1, z1 = self.coords[bridge[0]]
+        ndx2, x2, y2, z2 = self.coords[bridge[1]+1]
+        dist = np.sqrt((x1-x2)**2+(y1-y2)**2+(z1-z2)**2)
+        return alexander(coords, max_cross=60, closure=0), dist
 
     def topol_shorter_loop(self, bridge):
         coords = [self.coords[i] for i in range(1,bridge[0]+1)]
@@ -73,7 +78,7 @@ class Protein():
 if __name__ == '__main__':
     auk = Protein('1aukA_CA.xyz', [12,263,264])
     ei6_1 = Protein('1ei6A_CA.xyz', [24,63,239,240,241])
-    ei6_2 = Protein('1ei6A_CA.xyz', [201,205,367,411])
+    ei6_2 = Protein('1ei6A_CA.xyz', [201,205,367])
     ejj_1 = Protein('1ejjA_CA.xyz', [10,60,442,443])
-    ejj_2 = Protein('1ejjA_CA.xyz', [401,405,460,559])
+    ejj_2 = Protein('1ejjA_CA.xyz', [401,405,460])
 
