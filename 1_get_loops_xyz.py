@@ -32,21 +32,21 @@ class Protein():
 
     def topol_loops(self):
         constituent_knots = {}
-        t0 = self.topol_default_loop()
+        t0, t0_dir, t0_mass = self.topol_default_loop()
         with open('topology.txt', 'a+') as f:
             f.write('{}A\n'.format(self.name))
-            f.write('Whole chain: {}\n'.format(t0))
+            f.write('Whole chain: probabilistic {}; direct {}; mass_center {}\n'.format(t0, t0_dir, t0_mass))
         constituent_knots['default'] = t0
         for bridge in self.bridges:
             print('\rPDB:{}, bridge:{:d}-{:d}'.format(self.name,bridge[0],bridge[1]),end='')
             t_in, dist = self.topol_internal_loop(bridge)
             with open('topology.txt', 'a+') as f:
                 f.write('Bridge {:d}-{:d} dist: {:.2f}A\n'.format(bridge[0], bridge[1], dist))
-                f.write('  Internal loop {:d}-{:d}: {}\n'.format(bridge[0], bridge[1], t_in))
+                f.write('  Internal loop {:d}-{:d}: direct {}\n'.format(bridge[0], bridge[1], t_in))
             constituent_knots['in_{:d}-{:d}'.format(bridge[0],bridge[1])] = t_in
-            t_sh = self.topol_shorter_loop(bridge)
+            t_sh, t_sh_dir, t_sh_mass = self.topol_shorter_loop(bridge)
             with open('topology.txt', 'a+') as f:
-                f.write('  Shorter loop {:d}-{:d}: {}\n'.format(bridge[0], bridge[1], t_sh))
+                f.write('  Shorter loop {:d}-{:d}: probabilistic {}; direct {}; mass_center {}\n'.format(bridge[0], bridge[1], t_sh, t_sh_dir, t_sh_mass))
             constituent_knots['sh_{:d}-{:d}'.format(bridge[0],bridge[1])] = t_sh
         with open('topology.txt', 'a+') as f:
             f.write('=====================\n')
@@ -56,7 +56,7 @@ class Protein():
         coords = [self.coords[i] for i in range(1,self.end_ndx+1)]
         with open('loop_xyzs/{}_default.xyz'.format(self.name), 'w') as f:
             f.write(self.format_coords(coords))
-        return alexander(coords, max_cross=60, closure=2)
+        return alexander(coords, max_cross=60, closure=2), alexander(coords, max_cross=60, closure=0), alexander(coords, max_cross=60, closure=1)
 
     def topol_internal_loop(self, bridge):
         coords = [self.coords[i] for i in range(bridge[0],bridge[1]+1)]
@@ -72,7 +72,7 @@ class Protein():
         coords += [self.coords[i] for i in range(bridge[1],self.end_ndx+1)]
         with open('loop_xyzs/{}_sh_{:d}-{:d}.xyz'.format(self.name,bridge[0],bridge[1]), 'w') as f:
             f.write(self.format_coords(coords))
-        return alexander(coords, max_cross=60, closure=2)
+        return alexander(coords, max_cross=60, closure=2), alexander(coords, max_cross=60, closure=0), alexander(coords, max_cross=60, closure=1)
 
 
 if __name__ == '__main__':
