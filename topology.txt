@@ -1,0 +1,413 @@
+======================================
+testA
+SS bridges: []
+ION bridges: [((49, 89), (33, 76))]
+Whole chain: probabilistic {'3_1': 0.885, '0_1': 0.05}; direct 3_1; mass_center 3_1
+=====================
+======================================
+testA
+SS bridges: [(49, 89), (33, 76)]
+ION bridges: [(12, 50), (12, 100), (50, 100)]
+Whole chain: probabilistic {'3_1': 0.865, '0_1': 0.05}; direct 3_1; mass_center 3_1
+=====================
+Bridge 12-50
+  Internal loop 12-50: direct 0_1
+  Shorter loop 12-50: probabilistic {'0_1': 0.95}; direct 0_1; mass_center 0_1
+=====================
+Bridge 12-100
+  Internal loop 12-100: direct 3_1
+  Shorter loop 12-100: probabilistic {'0_1': 0.99}; direct 0_1; mass_center 0_1
+=====================
+Bridge 33-76
+  Internal loop 33-76: direct 0_1
+  Shorter loop 33-76: probabilistic {'0_1': 0.945}; direct 0_1; mass_center 0_1
+=====================
+Bridge 49-89
+  Internal loop 49-89: direct 0_1
+  Shorter loop 49-89: probabilistic {'0_1': 0.95}; direct 0_1; mass_center 0_1
+=====================
+Bridge 50-100
+  Internal loop 50-100: direct 0_1
+  Shorter loop 50-100: probabilistic {'0_1': 0.95}; direct 0_1; mass_center 0_1
+=====================
+test, DEGENERATION, bridges:12-50,12-100
+test, THETA, bridges:12-50,33-76
+  Shorter loop 12-50_33-76: direct 0_1
+  Internal loop 1 12-50: direct 0_1
+  Internal loop 2 33-76: direct 0_1
+=====================
+test, THETA, bridges:12-50,49-89
+  Shorter loop 12-50_49-89: direct 0_1
+  Internal loop 1 12-50: direct 0_1
+  Internal loop 2 49-89: direct 0_1
+=====================
+test, DEGENERATION, bridges:12-50,50-100
+  Shorter loop 12-50_50-100: direct 0_1
+  Internal loop 1 12-50: direct 0_1
+  Internal loop 2 50-100: direct 0_1
+=====================
+test, SNOWMAN, bridges:12-100,33-76
+  Shorter loop 12-100_33-76: direct 0_1
+  Internal loop 1 12-100: direct 3_1
+  Internal loop 2 33-76: direct 0_1
+=====================
+test, SNOWMAN, bridges:12-100,49-89
+  Shorter loop 12-100_49-89: direct 0_1
+  Internal loop 1 12-100: direct 3_1
+  Internal loop 2 49-89: direct 0_1
+=====================
+test, DEGENERATION, bridges:12-100,50-100
+test, THETA, bridges:33-76,49-89
+  Shorter loop 33-76_49-89: direct 0_1
+  Internal loop 1 33-76: direct 0_1
+  Internal loop 2 49-89: direct 0_1
+=====================
+test, THETA, bridges:33-76,50-100
+  Shorter loop 33-76_50-100: direct 0_1
+  Internal loop 1 33-76: direct 0_1
+  Internal loop 2 50-100: direct 0_1
+=====================
+test, THETA, bridges:49-89,50-100
+  Shorter loop 49-89_50-100: direct 0_1
+  Internal loop 1 49-89: direct 0_1
+  Internal loop 2 50-100: direct 0_1
+=====================
+======================================
+1aukA
+SS bridges: [(282, 396)]
+ION bridges: [(12, 263), (12, 264), (263, 264)]
+Whole chain: probabilistic {'0_1': 0.71}; direct 3_1; mass_center 0_1
+=====================
+Bridge 12-263
+  Internal loop 12-263: direct 0_1
+  Shorter loop 12-263: probabilistic {'0_1': 0.93}; direct 0_1; mass_center 0_1
+=====================
+Bridge 12-264
+  Internal loop 12-264: direct 0_1
+  Shorter loop 12-264: probabilistic {'0_1': 0.94}; direct 0_1; mass_center 0_1
+=====================
+Bridge 263-264
+  Internal loop 263-264: direct 0_1
+  Shorter loop 263-264: probabilistic {'3_1': 0.13, '0_1': 0.71}; direct 3_1; mass_center 0_1
+=====================
+Bridge 282-396
+  Internal loop 282-396: direct 0_1
+  Shorter loop 282-396: probabilistic {'0_1': 0.165, '3_1': 0.58}; direct 5_1; mass_center 3_1
+=====================
+1auk, DEGENERATION, bridges:12-263,12-264
+1auk, DEGENERATION, bridges:12-263,263-264
+  Shorter loop 12-263_263-264: direct 0_1
+  Internal loop 1 12-263: direct 0_1
+  Internal loop 2 263-264: direct 0_1
+=====================
+1auk, HANDCUFF, bridges:12-263,282-396
+1auk, DEGENERATION, bridges:12-264,263-264
+1auk, HANDCUFF, bridges:12-264,282-396
+1auk, HANDCUFF, bridges:263-264,282-396
+======================================
+1aukA
+SS bridges: [(282, 396)]
+ION bridges: [(12, 263), (12, 264), (263, 264)]
+Whole chain: probabilistic {'0_1': 0.71, '3_1': 0.11}; direct 3_1; mass_center 0_1
+=====================
+Bridge 12-263
+  Internal loop 12-263: direct 0_1
+  Shorter loop 12-263: probabilistic {'0_1': 0.955}; direct 0_1; mass_center 0_1
+=====================
+Bridge 12-264
+  Internal loop 12-264: direct 0_1
+  Shorter loop 12-264: probabilistic {'0_1': 0.97}; direct 0_1; mass_center 0_1
+=====================
+Bridge 263-264
+  Internal loop 263-264: direct 0_1
+  Shorter loop 263-264: probabilistic {'0_1': 0.705, '3_1': 0.155}; direct 3_1; mass_center 0_1
+=====================
+Bridge 282-396
+  Internal loop 282-396: direct 0_1
+  Shorter loop 282-396: probabilistic {'0_1': 0.16, '3_1': 0.635}; direct 5_1; mass_center 3_1
+=====================
+1auk, DEGENERATION, bridges:12-263,12-264
+1auk, DEGENERATION, bridges:12-263,263-264
+  Shorter loop 12-263_263-264: direct 0_1
+  Internal loop 1 12-263: direct 0_1
+  Internal loop 2 263-264: direct 0_1
+=====================
+1auk, HANDCUFF, bridges:12-263,282-396
+1auk, DEGENERATION, bridges:12-264,263-264
+1auk, HANDCUFF, bridges:12-264,282-396
+1auk, HANDCUFF, bridges:263-264,282-396
+======================================
+2k0aA
+SS bridges: [(49, 89), (33, 76)]
+ION bridges: [(12, 50), (12, 100), (50, 100)]
+Whole chain: probabilistic {'3_1': 0.875, '0_1': 0.035}; direct 3_1; mass_center 3_1
+=====================
+Bridge 12-50
+  Internal loop 12-50: direct 0_1
+  Shorter loop 12-50: probabilistic {'0_1': 0.945}; direct 0_1; mass_center 0_1
+=====================
+Bridge 12-100
+  Internal loop 12-100: direct 3_1
+  Shorter loop 12-100: probabilistic {'0_1': 0.985}; direct 0_1; mass_center 0_1
+=====================
+Bridge 33-76
+  Internal loop 33-76: direct 0_1
+  Shorter loop 33-76: probabilistic {'0_1': 0.945}; direct 0_1; mass_center 0_1
+=====================
+Bridge 49-89
+  Internal loop 49-89: direct 0_1
+  Shorter loop 49-89: probabilistic {'0_1': 0.94}; direct 0_1; mass_center 0_1
+=====================
+Bridge 50-100
+  Internal loop 50-100: direct 0_1
+  Shorter loop 50-100: probabilistic {'0_1': 0.945}; direct 0_1; mass_center 0_1
+=====================
+2k0a, DEGENERATION, bridges:12-50,12-100
+2k0a, THETA, bridges:12-50,33-76
+  Shorter loop 12-50_33-76: direct 0_1
+  Internal loop 1 12-50: direct 0_1
+  Internal loop 2 33-76: direct 0_1
+=====================
+2k0a, THETA, bridges:12-50,49-89
+  Shorter loop 12-50_49-89: direct 0_1
+  Internal loop 1 12-50: direct 0_1
+  Internal loop 2 49-89: direct 0_1
+=====================
+2k0a, DEGENERATION, bridges:12-50,50-100
+  Shorter loop 12-50_50-100: direct 0_1
+  Internal loop 1 12-50: direct 0_1
+  Internal loop 2 50-100: direct 0_1
+=====================
+2k0a, SNOWMAN, bridges:12-100,33-76
+  Shorter loop 12-100_33-76: direct 0_1
+  Internal loop 1 12-100: direct 3_1
+  Internal loop 2 33-76: direct 0_1
+=====================
+2k0a, SNOWMAN, bridges:12-100,49-89
+  Shorter loop 12-100_49-89: direct 0_1
+  Internal loop 1 12-100: direct 3_1
+  Internal loop 2 49-89: direct 0_1
+=====================
+2k0a, DEGENERATION, bridges:12-100,50-100
+2k0a, THETA, bridges:33-76,49-89
+  Shorter loop 33-76_49-89: direct 0_1
+  Internal loop 1 33-76: direct 0_1
+  Internal loop 2 49-89: direct 0_1
+=====================
+2k0a, THETA, bridges:33-76,50-100
+  Shorter loop 33-76_50-100: direct 0_1
+  Internal loop 1 33-76: direct 0_1
+  Internal loop 2 50-100: direct 0_1
+=====================
+2k0a, THETA, bridges:49-89,50-100
+  Shorter loop 49-89_50-100: direct 0_1
+  Internal loop 1 49-89: direct 0_1
+  Internal loop 2 50-100: direct 0_1
+=====================
+======================================
+2k0aA
+SS bridges: []
+ION bridges: [(14, 49), (14, 52), (14, 89), (49, 52), (49, 89), (52, 89)]
+Whole chain: probabilistic {'3_1': 0.89, '0_1': 0.075}; direct 3_1; mass_center 3_1
+=====================
+Bridge 14-49
+  Internal loop 14-49: direct 0_1
+  Shorter loop 14-49: probabilistic {'0_1': 0.97}; direct 0_1; mass_center 0_1
+=====================
+Bridge 14-52
+  Internal loop 14-52: direct 0_1
+  Shorter loop 14-52: probabilistic {'0_1': 0.975}; direct 0_1; mass_center 0_1
+=====================
+Bridge 14-89
+  Internal loop 14-89: direct 3_1
+  Shorter loop 14-89: probabilistic {'0_1': 0.99}; direct 0_1; mass_center 0_1
+=====================
+Bridge 49-52
+  Internal loop 49-52: direct 0_1
+  Shorter loop 49-52: probabilistic {'3_1': 0.895, '0_1': 0.075}; direct 3_1; mass_center 3_1
+=====================
+Bridge 49-89
+  Internal loop 49-89: direct 0_1
+  Shorter loop 49-89: probabilistic {'0_1': 0.985}; direct 0_1; mass_center 0_1
+=====================
+Bridge 52-89
+  Internal loop 52-89: direct 0_1
+  Shorter loop 52-89: probabilistic {'0_1': 0.985}; direct 0_1; mass_center 0_1
+=====================
+2k0a, DEGENERATION, bridges:14-49,14-52
+2k0a, DEGENERATION, bridges:14-49,14-89
+2k0a, DEGENERATION, bridges:14-49,49-52
+  Shorter loop 14-49_49-52: direct 0_1
+  Internal loop 1 14-49: direct 0_1
+  Internal loop 2 49-52: direct 0_1
+=====================
+2k0a, DEGENERATION, bridges:14-49,49-89
+  Shorter loop 14-49_49-89: direct 0_1
+  Internal loop 1 14-49: direct 0_1
+  Internal loop 2 49-89: direct 0_1
+=====================
+2k0a, HANDCUFF, bridges:14-49,52-89
+2k0a, DEGENERATION, bridges:14-52,14-89
+2k0a, DEGENERATION, bridges:14-52,49-52
+2k0a, THETA, bridges:14-52,49-89
+  Shorter loop 14-52_49-89: direct 0_1
+  Internal loop 1 14-52: direct 0_1
+  Internal loop 2 49-89: direct 0_1
+=====================
+2k0a, DEGENERATION, bridges:14-52,52-89
+  Shorter loop 14-52_52-89: direct 0_1
+  Internal loop 1 14-52: direct 0_1
+  Internal loop 2 52-89: direct 0_1
+=====================
+2k0a, SNOWMAN, bridges:14-89,49-52
+  Shorter loop 14-89_49-52: direct 3_1
+  Internal loop 1 14-89: direct 3_1
+  Internal loop 2 49-52: direct 0_1
+=====================
+2k0a, DEGENERATION, bridges:14-89,49-89
+2k0a, DEGENERATION, bridges:14-89,52-89
+2k0a, DEGENERATION, bridges:49-52,49-89
+2k0a, DEGENERATION, bridges:49-52,52-89
+  Shorter loop 49-52_52-89: direct 0_1
+  Internal loop 1 49-52: direct 0_1
+  Internal loop 2 52-89: direct 0_1
+=====================
+2k0a, DEGENERATION, bridges:49-89,52-89
+======================================
+2k0aA
+SS bridges: []
+ION bridges: [(26, 29), (26, 61), (26, 64), (29, 61), (29, 64), (61, 64)]
+Whole chain: probabilistic {'3_1': 0.89, '0_1': 0.075}; direct 3_1; mass_center 3_1
+=====================
+Bridge 26-29
+  Internal loop 26-29: direct 0_1
+  Shorter loop 26-29: probabilistic {'3_1': 0.895, '0_1': 0.075}; direct 3_1; mass_center 3_1
+=====================
+Bridge 26-61
+  Internal loop 26-61: direct 0_1
+  Shorter loop 26-61: probabilistic {'0_1': 0.975}; direct 0_1; mass_center 0_1
+=====================
+Bridge 26-64
+  Internal loop 26-64: direct 0_1
+  Shorter loop 26-64: probabilistic {'0_1': 0.975}; direct 0_1; mass_center 0_1
+=====================
+Bridge 29-61
+  Internal loop 29-61: direct 0_1
+  Shorter loop 29-61: probabilistic {'0_1': 0.98}; direct 0_1; mass_center 0_1
+=====================
+Bridge 29-64
+  Internal loop 29-64: direct 0_1
+  Shorter loop 29-64: probabilistic {'0_1': 0.98}; direct 0_1; mass_center 0_1
+=====================
+Bridge 61-64
+  Internal loop 61-64: direct 0_1
+  Shorter loop 61-64: probabilistic {'3_1': 0.89, '0_1': 0.075}; direct 3_1; mass_center 3_1
+=====================
+2k0a, DEGENERATION, bridges:26-29,26-61
+2k0a, DEGENERATION, bridges:26-29,26-64
+2k0a, DEGENERATION, bridges:26-29,29-61
+  Shorter loop 26-29_29-61: direct 0_1
+  Internal loop 1 26-29: direct 0_1
+  Internal loop 2 29-61: direct 0_1
+=====================
+2k0a, DEGENERATION, bridges:26-29,29-64
+  Shorter loop 26-29_29-64: direct 0_1
+  Internal loop 1 26-29: direct 0_1
+  Internal loop 2 29-64: direct 0_1
+=====================
+2k0a, HANDCUFF, bridges:26-29,61-64
+2k0a, DEGENERATION, bridges:26-61,26-64
+2k0a, DEGENERATION, bridges:26-61,29-61
+2k0a, THETA, bridges:26-61,29-64
+  Shorter loop 26-61_29-64: direct 0_1
+  Internal loop 1 26-61: direct 0_1
+  Internal loop 2 29-64: direct 0_1
+=====================
+2k0a, DEGENERATION, bridges:26-61,61-64
+  Shorter loop 26-61_61-64: direct 0_1
+  Internal loop 1 26-61: direct 0_1
+  Internal loop 2 61-64: direct 0_1
+=====================
+2k0a, SNOWMAN, bridges:26-64,29-61
+  Shorter loop 26-64_29-61: direct 0_1
+  Internal loop 1 26-64: direct 0_1
+  Internal loop 2 29-61: direct 0_1
+=====================
+2k0a, DEGENERATION, bridges:26-64,29-64
+2k0a, DEGENERATION, bridges:26-64,61-64
+2k0a, DEGENERATION, bridges:29-61,29-64
+2k0a, DEGENERATION, bridges:29-61,61-64
+  Shorter loop 29-61_61-64: direct 0_1
+  Internal loop 1 29-61: direct 0_1
+  Internal loop 2 61-64: direct 0_1
+=====================
+2k0a, DEGENERATION, bridges:29-64,61-64
+======================================
+2k0aA
+SS bridges: []
+ION bridges: [(33, 36), (33, 76), (33, 79), (36, 76), (36, 79), (76, 79)]
+Whole chain: probabilistic {'3_1': 0.89, '0_1': 0.075}; direct 3_1; mass_center 3_1
+=====================
+Bridge 33-36
+  Internal loop 33-36: direct 0_1
+  Shorter loop 33-36: probabilistic {'3_1': 0.895, '0_1': 0.075}; direct 3_1; mass_center 3_1
+=====================
+Bridge 33-76
+  Internal loop 33-76: direct 0_1
+  Shorter loop 33-76: probabilistic {'0_1': 0.98}; direct 0_1; mass_center 0_1
+=====================
+Bridge 33-79
+  Internal loop 33-79: direct 0_1
+  Shorter loop 33-79: probabilistic {'0_1': 0.98}; direct 0_1; mass_center 0_1
+=====================
+Bridge 36-76
+  Internal loop 36-76: direct 0_1
+  Shorter loop 36-76: probabilistic {'0_1': 0.98}; direct 0_1; mass_center 0_1
+=====================
+Bridge 36-79
+  Internal loop 36-79: direct 0_1
+  Shorter loop 36-79: probabilistic {'0_1': 0.98}; direct 0_1; mass_center 0_1
+=====================
+Bridge 76-79
+  Internal loop 76-79: direct 0_1
+  Shorter loop 76-79: probabilistic {'3_1': 0.895, '0_1': 0.075}; direct 3_1; mass_center 3_1
+=====================
+2k0a, DEGENERATION, bridges:33-36,33-76
+2k0a, DEGENERATION, bridges:33-36,33-79
+2k0a, DEGENERATION, bridges:33-36,36-76
+  Shorter loop 33-36_36-76: direct 0_1
+  Internal loop 1 33-36: direct 0_1
+  Internal loop 2 36-76: direct 0_1
+=====================
+2k0a, DEGENERATION, bridges:33-36,36-79
+  Shorter loop 33-36_36-79: direct 0_1
+  Internal loop 1 33-36: direct 0_1
+  Internal loop 2 36-79: direct 0_1
+=====================
+2k0a, HANDCUFF, bridges:33-36,76-79
+2k0a, DEGENERATION, bridges:33-76,33-79
+2k0a, DEGENERATION, bridges:33-76,36-76
+2k0a, THETA, bridges:33-76,36-79
+  Shorter loop 33-76_36-79: direct 0_1
+  Internal loop 1 33-76: direct 0_1
+  Internal loop 2 36-79: direct 0_1
+=====================
+2k0a, DEGENERATION, bridges:33-76,76-79
+  Shorter loop 33-76_76-79: direct 0_1
+  Internal loop 1 33-76: direct 0_1
+  Internal loop 2 76-79: direct 0_1
+=====================
+2k0a, SNOWMAN, bridges:33-79,36-76
+  Shorter loop 33-79_36-76: direct 0_1
+  Internal loop 1 33-79: direct 0_1
+  Internal loop 2 36-76: direct 0_1
+=====================
+2k0a, DEGENERATION, bridges:33-79,36-79
+2k0a, DEGENERATION, bridges:33-79,76-79
+2k0a, DEGENERATION, bridges:36-76,36-79
+2k0a, DEGENERATION, bridges:36-76,76-79
+  Shorter loop 36-76_76-79: direct 0_1
+  Internal loop 1 36-76: direct 0_1
+  Internal loop 2 76-79: direct 0_1
+=====================
+2k0a, DEGENERATION, bridges:36-79,76-79
